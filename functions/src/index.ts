@@ -10,7 +10,7 @@ async function main(req:any, res:any) {
       responseType: 'text'
     };
     console.log(req.body);
-    const ret = await axios.post('http://takana.web5.jp/test/test.php', req.body, config);
+    const ret = await axios.post('http://xxxxx.xxxxx.jp/test/test.php', req.body, config);
     const text = ret.data;
     console.log(text);
     res.send(text);
