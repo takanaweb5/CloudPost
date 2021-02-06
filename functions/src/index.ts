@@ -9,8 +9,8 @@ async function main(req:any, res:any) {
       },
       responseType: 'text'
     };
-    const ret = await axios.post('http://takana.web5.jp/test/test.php',
-                                  'http://xxx.jp?name=sato&age=55' + '\t' +'名前=山田&年齢=99.99', config);
+    console.log(req.body);
+    const ret = await axios.post('http://takana.web5.jp/test/test.php', req.body, config);
     const text = ret.data;
     console.log(text);
     res.send(text);
