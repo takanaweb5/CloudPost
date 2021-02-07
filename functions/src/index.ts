@@ -8,8 +8,16 @@ async function callWebAPI(url:string, postMsg:string) {
       headers: {'Content-Type': 'text/plain'},
       responseType: 'text'
     };
+<<<<<<< HEAD
     const response = await axios.post(url, postMsg, config);
     return response.data as string;
+=======
+    console.log(req.body);
+    const ret = await axios.post('http://xxxxx.xxxxx.jp/test/test.php', req.body, config);
+    const text = ret.data;
+    console.log(text);
+    res.send(text);
+>>>>>>> 5b1f5d2d10a1b1af4a00b5337d4bdffd57656832
   } catch (error) {
     const {
       status,
