@@ -25,9 +25,10 @@ export const APIPass = functions.region("asia-northeast2").https.onRequest((requ
 
   //別ドメインからアクセスした場合のcorsエラーを回避する必要のない時は不要
   // response.set('Access-Control-Allow-Origin', '*'); //すべて許可
-  response.set('Access-Control-Allow-Origin', process.env.url2); //設定したドメインのみ許可
+  response.set('Access-Control-Allow-Origin', process.env.url2); //環境変数に設定したドメインのみ許可
 
   callWebAPI(url, request.body)
+    //このようにするとメソッドチェーンも可能
     // .then(result => {
     //   return callWebAPI(url, result);
     // })
